@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2015 Hooked On Play -->
+<resources>
+    <string name="app_name">CountryDatabase</string>
+
+    <string name="data_countries">countries</string>
+    <string name="data_country">country</string>
+    <string name="data_per_km">per km</string>
+    <string name="data_billion">billion</string>
+    <string name="data_million">million</string>
+    <string name="data_km2">km²</string>
+    <string name="data_km">km</string>
+    <string name="data_km_north">km north</string>
+    <string name="data_km_south">km south</string>
+    <string name="data_no_borders">No land borders</string>
+
+    <string-array name="flag_copyright">
+        <item>"Flag of Croatia" by Nightstallion, Elephantus, Neoneo13, Denelson83, Rainman, R-41, Minestrone, Lupo, Zscout370,MaGa (based on Decision of the Parliament) - http://www.sabor.hr/Default.aspx?sec=4317. Licensed under Public Domain via Wikimedia Commons - http://commons.wikimedia.org/wiki/File:Flag_of_Croatia.svg#/media/File:Flag_of_Croatia.svg</item>
+        <item>"Flag of Australia (converted)" by Unknown(Vector graphics image by Ian Fieggen) (only minor code changes by uploader.) - Own work. Licensed under Public Domain via Wikimedia Commons - http://commons.wikimedia.org/wiki/File:Flag_of_Australia_(converted).svg#/media/File:Flag_of_Australia_(converted).svg</item>
+        <item>"Flag of Germany". Licensed under Public Domain via Wikipedia - http://en.wikipedia.org/wiki/File:Flag_of_Germany.svg#/media/File:Flag_of_Germany.svg</item>
+        <item>"Flag of Austria" by User:SKopp - Own work, http://www.bmlv.gv.at/abzeichen/dekorationen.shtml. Licensed under Public Domain via Wikimedia Commons - http://commons.wikimedia.org/wiki/File:Flag_of_Austria.svg#/media/File:Flag_of_Austria.svg</item>
+        <item>"Flag of Kenya" by User:Pumbaa80 - http://www.kenyarchives.go.ke/flag_specifications.htm. Licensed under Public Domain via Wikimedia Commons - http://commons.wikimedia.org/wiki/File:Flag_of_Kenya.svg#/media/File:Flag_of_Kenya.svg</item>
+        <item>"Flag of Brazil". Licensed under Public Domain via Wikipedia - http://en.wikipedia.org/wiki/File:Flag_of_Brazil.svg#/media/File:Flag_of_Brazil.svg</item>
+        <item>"Flag of Japan". Licensed under Public Domain via Wikipedia - http://en.wikipedia.org/wiki/File:Flag_of_Japan.svg#/media/File:Flag_of_Japan.svg</item>
+        <item>"Flag of South Korea" by Various - Ordinance Act of the Law concerning the National Flag of the Republic of Korea. Licensed under Public Domain via Wikimedia Commons - http://commons.wikimedia.org/wiki/File:Flag_of_South_Korea.svg#/media/File:Flag_of_South_Korea.svg</item>
+        <item>"Flag of Russia". Licensed under Public Domain via Wikipedia - http://en.wikipedia.org/wiki/File:Flag_of_Russia.svg#/media/File:Flag_of_Russia.svg</item>
+        <item>"Flag of Sweden". Licensed under Public Domain via Wikipedia - http://en.wikipedia.org/wiki/File:Flag_of_Sweden.svg#/media/File:Flag_of_Sweden.svg</item>
+        <item>"Flag of Norway" by Dbenbenn - Own work. Licensed under Public Domain via Wikimedia Commons - http://commons.wikimedia.org/wiki/File:Flag_of_Norway.svg#/media/File:Flag_of_Norway.svg</item>
+        <item>"Flag of Switzerland (Pantone)" *Flag_of_Switzerland.svg: User:Marc MongenetCredits:User:-xfi-User:Zscout370derivative work: User:Zscout370 (Return fire) - PDF Colors Construction sheet. Licensed under Public Domain via Wikimedia Commons - http://commons.wikimedia.org/wiki/File:Flag_of_Switzerland_(Pantone).svg#/media/File:Flag_of_Switzerland_(Pantone).svg</item>
+
+    </string-array>
+</resources>

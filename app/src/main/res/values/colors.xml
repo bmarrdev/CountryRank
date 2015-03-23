@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2015 Hooked On Play -->
+<resources>
+    <item name="colorPrimary" type="color">#FF33AA33</item>
+    <item name="colorPrimaryDark" type="color">#FF33AAAA</item>
+
+    <item name="country_card_back_color" type="color">#88FFFFFF</item>
+
+    <item name="start_menu_back_color" type="color">#FF0097A7</item>
+</resources>

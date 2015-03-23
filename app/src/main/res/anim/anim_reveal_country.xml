@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2015 Hooked On Play -->
+<set
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/linear_interpolator" >
+
+   <translate
+        android:fromXDelta="-100%p"
+        android:toXDelta="5%p"
+       android:startOffset="600"
+        android:duration="300" />
+      <translate
+        android:fromXDelta="0%p"
+        android:toXDelta="-10%p"
+        android:duration="100"
+        android:startOffset="900"/>
+      <translate
+        android:fromXDelta="0%p"
+        android:toXDelta="7%p"
+        android:duration="75"
+        android:startOffset="1000"/>
+      <translate
+        android:fromXDelta="0%p"
+        android:toXDelta="-2%p"
+        android:duration="25"
+        android:startOffset="1075"/>
+
+</set>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2015 Hooked On Play -->
+<resources>
+    <integer-array name="material_palette_blue">
+        <item>0xEE0097A7</item>
+        <item>0xEE00BCD4</item>
+        <item>0xEEB2EBF2</item>
+        <item>0xEE009688</item>
+        <item>0xEE03A9F4</item>
+        <item>0xEE448AFF</item>
+        <item>0xEEB3E5FC</item>
+    </integer-array>
+</resources>

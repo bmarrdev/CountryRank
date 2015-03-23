@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2015 Hooked On Play -->
+<resources>
+    <integer name="list_item_count_default">3</integer>
+    <integer name="list_item_count_minimum">3</integer>
+    <integer name="list_item_count_maximum">5</integer>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2015 Hooked On Play -->
+<resources>
+    <string name="pref_continents">pref_continents</string>
+    <string name="pref_questions">pref_questions</string>
+    <string name="pref_difficulty">pref_difficulty</string>
+    <string name="pref_number_items">pref_number_items</string>
+    <string name="pref_game">pref_game</string>
+    <string name="pref_first_run">pref_first_run</string>
+    <string name="pref_game_state">pref_game_state</string>
+    <string name="pref_current_score">pref_current_score</string>
+    <string name="pref_country_list">pref_country_list</string>
+    <string name="pref_random_question">pref_random_question</string>
+    <string name="database_country">database_country</string>
+
+    <string name="tag_itemcount">ITEM_COUNT</string>
+    <string name="tag_resourceid">RESOURCE_ID</string>
+    <string name="tag_difficulty">DIFFICULTY_ID</string>
+    <string name="tag_countries">COUNTRIES_ID</string>
+    <string name="bundle_lines">BUNDLE_LINES</string>
+    <string name="bundle_difficulty">BUNDLE_DIFFICULTY</string>
+    <string name="bundle_question">BUNDLE_QUESTION</string>
+    <string name="bundle_question_type">BUNDLE_QUESTION_TYPE</string>
+</resources>

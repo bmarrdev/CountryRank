@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="840"
+   height="420"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="flag_jordan.svg">
+  <metadata
+     id="metadata18">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs16" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview14"
+     showgrid="false"
+     inkscape:zoom="0.1625"
+     inkscape:cx="211.86879"
+     inkscape:cy="165.45632"
+     inkscape:window-x="62"
+     inkscape:window-y="37"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <rect
+     width="840"
+     height="420"
+     fill="#007a3d"
+     id="rect4" />
+  <rect
+     width="840"
+     height="280"
+     fill="#fff"
+     id="rect6" />
+  <rect
+     width="840"
+     height="140"
+     fill="000"
+     id="rect8" />
+  <path
+     d="M 0,0 V 420 L 420,210 z"
+     id="path10"
+     inkscape:connector-curvature="0"
+     style="fill:#ce1126" />
+  <path
+     d="M129.787138,180 136.295394,196.485467 153.242082,191.295306 144.411056,206.662186 159.034975,216.675628 141.51461,219.352347 142.80365,237.029066 129.787138,225 116.770625,237.029066 118.059665,219.352347 100.5393,216.675628 115.163219,206.662186 106.332193,191.295306 123.278882,196.485467 129.787138,180z"
+     fill="#fff"
+     id="path12" />
+</svg>

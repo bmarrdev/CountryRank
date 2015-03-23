@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2015 Hooked On Play -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:id="@+id/layoutMain">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimaryDark"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/imageViewFullScreen"
+        android:contentDescription="@string/country_map_desc"
+        android:visibility="gone" />
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cardViewMap"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        card_view:cardBackgroundColor="#88668899"
+        card_view:cardCornerRadius="4dp"
+        android:layout_below="@+id/toolbarMain"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageMap"
+                android:src="@drawable/map_morocco"
+                android:padding="@dimen/view_horizontal_margin"
+                android:contentDescription="@string/country_map_desc"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/imageFlag"
+                android:src="@drawable/flag_generic"
+                android:layout_weight="1"
+                android:padding="@dimen/view_horizontal_margin"
+                android:contentDescription="@string/country_flag_desc"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/countryMetricsList"
+        android:layout_below="@+id/cardViewMap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+</RelativeLayout>

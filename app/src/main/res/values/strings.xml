@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2015 Hooked On Play -->
+<resources>
+    <string name="app_name">Country Rank King</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_difficulty">Difficulty</string>
+    <string name="action_lines">Lines</string>
+    <string name="action_continents">Continents</string>
+    <string name="action_about">About</string>
+    <string name="action_questions">Questions</string>
+    <string name="button_credits">Credits</string>
+    <string name="button_close">Close</string>
+    <string name="button_new_game">New Game</string>
+    <string name="button_answer">Answer</string>
+    <string name="button_next">Next</string>
+
+    <string name="about_application_icon">Application Icon</string>
+    <string name="about_application_version">Version</string>
+
+    <string name="country_flag_desc">Flag</string>
+    <string name="country_map_desc">Map</string>
+
+    <string name="start_difficulty_desc">Select difficulty</string>
+    <string name="start_lines_desc">Select number of lines</string>
+    <string name="start_title_desc">Application Title</string>
+
+    <string name="button_start_game_text">Start</string>
+
+    <string name="country_dialog_capital">Capital</string>
+    <string name="country_dialog_population">Population</string>
+    <string name="country_dialog_area">Area</string>
+    <string name="country_dialog_gdp">GDP</string>
+    <string name="country_dialog_gdp_per_capita">GDP per capita</string>
+    <string name="country_dialog_coast_length">Length of coastline</string>
+    <string name="country_dialog_life_expectancy">Life Expectancy</string>
+    <string name="country_dialog_olympics_summer">Summer Olympic Medals</string>
+    <string name="country_dialog_olympics_winter">Winter Olympic Medals</string>
+    <string name="country_dialog_obesity">Obesity</string>
+    <string name="country_dialog_military">Military</string>
+    <string name="country_dialog_internet_access">Internet Access</string>
+
+
+    <string name="country_dialog_medals">medals</string>
+    <string name="country_dialog_people">people</string>
+    <string name="country_dialog_percent_of_people">% of people</string>
+
+    <string name="rank_area_highest">Largest Area</string>
+    <string name="rank_area_lowest">Smallest Area</string>
+
+    <string name="rank_latitude_north">Furthest North</string>
+    <string name="rank_latitude_south">Furthest South</string>
+
+    <string name="rank_population_highest">Highest Population</string>
+    <string name="rank_population_lowest">Lowest Population</string>
+
+    <string name="rank_density_highest">Most people per square km</string>
+    <string name="rank_density_lowest">Fewest people per square km</string>
+
+    <string name="rank_gdp_highest">Highest GDP</string>
+    <string name="rank_gdp_lowest">Lowest GDP</string>
+
+    <string name="rank_gdp_capita_highest">Highest GDP per capita</string>
+    <string name="rank_gdp_capita_lowest">Lowest GDP per capita</string>
+
+    <string name="rank_coastline_highest">Longest coastline</string>
+    <string name="rank_coastline_lowest">Shortest coastline</string>
+
+    <string name="rank_borders_highest">Most bordering countries</string>
+    <string name="rank_borders_lowest">Fewest bordering countries</string>
+</resources>

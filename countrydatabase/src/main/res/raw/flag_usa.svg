@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1235"
+   height="650"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="Flag_of_the_United_States.svg"
+   inkscape:export-filename="Flag_of_the_United_States.png"
+   inkscape:export-xdpi="7.0615387"
+   inkscape:export-ydpi="7.0615387">
+  <metadata
+     id="metadata73">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview71"
+     showgrid="false"
+     inkscape:zoom="0.22105263"
+     inkscape:cx="617.5"
+     inkscape:cy="325"
+     inkscape:window-x="66"
+     inkscape:window-y="29"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs4">
+    <polygon
+       id="pt"
+       points="-0.1624598481164531,0 0,-0.5 0.1624598481164531,0"
+       transform="scale(0.0616)"
+       fill="#FFF" />
+    <g
+       id="star">
+      <use
+         xlink:href="#pt"
+         transform="rotate(-144)"
+         id="use8" />
+      <use
+         xlink:href="#pt"
+         transform="rotate(-72)"
+         id="use10" />
+      <use
+         xlink:href="#pt"
+         id="use12" />
+      <use
+         xlink:href="#pt"
+         transform="rotate(72)"
+         id="use14" />
+      <use
+         xlink:href="#pt"
+         transform="rotate(144)"
+         id="use16" />
+    </g>
+    <g
+       id="s5">
+      <use
+         xlink:href="#star"
+         x="-0.252"
+         id="use19" />
+      <use
+         xlink:href="#star"
+         x="-0.126"
+         id="use21" />
+      <use
+         xlink:href="#star"
+         id="use23" />
+      <use
+         xlink:href="#star"
+         x="0.126"
+         id="use25" />
+      <use
+         xlink:href="#star"
+         x="0.252"
+         id="use27" />
+    </g>
+    <g
+       id="s6">
+      <use
+         xlink:href="#s5"
+         x="-0.063"
+         id="use30" />
+      <use
+         xlink:href="#star"
+         x="0.315"
+         id="use32" />
+    </g>
+    <g
+       id="x4">
+      <use
+         xlink:href="#s6"
+         id="use35" />
+      <use
+         xlink:href="#s5"
+         y="0.054"
+         id="use37" />
+      <use
+         xlink:href="#s6"
+         y="0.108"
+         id="use39" />
+      <use
+         xlink:href="#s5"
+         y="0.162"
+         id="use41" />
+    </g>
+    <g
+       id="u">
+      <use
+         xlink:href="#x4"
+         y="-0.216"
+         id="use44" />
+      <use
+         xlink:href="#x4"
+         id="use46" />
+      <use
+         xlink:href="#s6"
+         y="0.216"
+         id="use48" />
+    </g>
+    <rect
+       id="stripe"
+       width="1235"
+       height="50"
+       fill="#B22234" />
+  </defs>
+  <rect
+     width="1235"
+     height="650"
+     fill="#FFF"
+     id="rect51" />
+  <use
+     xlink:href="#stripe"
+     id="use53" />
+  <use
+     xlink:href="#stripe"
+     y="100"
+     id="use55" />
+  <use
+     xlink:href="#stripe"
+     y="200"
+     id="use57" />
+  <use
+     xlink:href="#stripe"
+     y="300"
+     id="use59" />
+  <use
+     xlink:href="#stripe"
+     y="400"
+     id="use61" />
+  <use
+     xlink:href="#stripe"
+     y="500"
+     id="use63" />
+  <use
+     xlink:href="#stripe"
+     y="600"
+     id="use65" />
+  <rect
+     width="494"
+     height="350"
+     fill="#3C3B6E"
+     id="rect67" />
+  <use
+     xlink:href="#u"
+     transform="translate(247,175) scale(650)"
+     id="use69" />
+</svg>

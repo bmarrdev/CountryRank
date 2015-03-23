@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2015 Hooked On Play -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1" >
+
+    <ImageView
+        android:id="@+id/imageViewData"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:padding="8dp" />
+
+    <ImageView
+        tools:ignore="contentDescription"
+        android:id="@+id/imageViewResult"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:src="@drawable/result_correct"
+        android:padding="@dimen/view_horizontal_margin"
+        android:layout_above="@+id/textViewCountryResult"
+        android:layout_alignParentTop="true"
+        android:alpha="0.8" />
+
+    <TextView
+        android:background="@drawable/countryname_rect"
+        android:id="@+id/textViewCountryName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/primary_text_default_material_dark"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:background="@drawable/countryresult_rect"
+        android:id="@+id/textViewCountryResult"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/primary_text_default_material_dark" />
+
+    <ImageView
+        tools:ignore="contentDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageViewHand"
+        android:src="@drawable/demo_hand"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/imageViewResult"
+        android:layout_alignEnd="@+id/imageViewResult"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="true"
+        android:onClick="onClickCountry"
+        android:id="@+id/frameClickInfo"
+        android:visibility="gone"></FrameLayout>
+
+</RelativeLayout>

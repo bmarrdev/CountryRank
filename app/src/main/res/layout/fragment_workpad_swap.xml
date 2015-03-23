@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2015 Hooked On Play -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        tools:ignore="contentDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageViewLowest"
+        android:layout_above="@+id/textDescBottom"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/icon_population_lowest"
+        android:padding="@dimen/view_horizontal_margin" />
+
+    <ImageView
+        tools:ignore="contentDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageViewHighest"
+        android:src="@drawable/icon_population_lowest"
+        android:padding="@dimen/view_horizontal_margin"
+        android:layout_below="@+id/textDescTop"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <com.jmedeisis.draglinearlayout.DragLinearLayout
+        android:id="@+id/dragLayoutCountries"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/textDescBottom"
+        android:layout_below="@+id/textDescTop"
+        android:orientation="vertical">
+
+        </com.jmedeisis.draglinearlayout.DragLinearLayout>
+
+    <TextView
+        android:id="@+id/textDescTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/rank_population_highest"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/abc_primary_text_material_dark"
+        android:textStyle="bold"
+        android:background="@drawable/country_border_top" />
+
+
+    <TextView
+        android:id="@+id/textDescBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/rank_population_lowest"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/abc_primary_text_material_dark"
+        android:textStyle="bold"
+        android:background="@drawable/country_border_bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
