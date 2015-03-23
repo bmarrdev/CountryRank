@@ -93,6 +93,7 @@ public class SwapFragment extends WorkPadFragment implements DragLinearLayout.On
      * items than this palette holds the layout will simply loop through to the start
      */
     private int[] mPalette;
+    @SuppressWarnings("FieldCanBeLocal")
     private View mHelpView;
 
     @Override
@@ -669,7 +670,7 @@ public class SwapFragment extends WorkPadFragment implements DragLinearLayout.On
                 SVG svg = SVG.getFromResource(getActivity(), mFlagId);
                 return svg.renderToPicture();
             } catch (SVGParseException e) {
-                Log.e(TAG, "Error loading resource " + String.valueOf(resourceId) + e.getMessage());
+                Log.e(TAG, "Error loading resource " + String.valueOf(mFlagId) + e.getMessage());
             }
             return null;
         }

@@ -2,8 +2,10 @@
 <!-- Copyright (C) 2015 Hooked On Play -->
 <resources>
     <string-array name="array_credits">
+        <item>Launcher assets generated using Android Asset Studio. http://romannurik.github.io/AndroidAssetStudio</item>
         <item><div>Some icons made by <a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>, <a href="http://www.flaticon.com/authors/daniel-bruce" title="Daniel Bruce">Daniel Bruce</a>, <a href="http://www.flaticon.com/authors/icomoon" title="Icomoon">Icomoon</a>, <a href="http://www.flaticon.com/authors/google" title="Google">Google</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div></item>
         <item>Coastline statistics from World Resources Institute</item>
+        <item>Population figures from http://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population</item>
         <item>Hand artwork by vecteezy (www.vecteezy.com)</item>
         <item>Independence Day Illustration by vecteezy (www.vecteezy.com)</item>
     </string-array>

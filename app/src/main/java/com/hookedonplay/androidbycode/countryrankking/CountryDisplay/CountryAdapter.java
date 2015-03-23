@@ -36,8 +36,7 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.card_country_metric, parent, false);
         // set the view's size, margins, padding and layout parameters
-        ViewHolder vh = new ViewHolder(v);
-        return vh;
+        return new ViewHolder(v);
     }
 
     // Replace the contents of a view (invoked by the layout manager)

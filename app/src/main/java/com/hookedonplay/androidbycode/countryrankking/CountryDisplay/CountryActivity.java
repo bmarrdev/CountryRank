@@ -52,6 +52,7 @@ public class CountryActivity extends ActionBarActivity {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
+    @SuppressWarnings("FieldCanBeLocal")
     private RecyclerView.LayoutManager mLayoutManager;
 
     /**
@@ -411,7 +412,7 @@ public class CountryActivity extends ActionBarActivity {
                 SVG svg = SVG.getFromResource(mContext, mFlagId);
                 return svg.renderToPicture();
             } catch (SVGParseException e) {
-                Log.e(TAG, "SVG Error loading resource " + String.valueOf(resourceId) + e.getMessage());
+                Log.e(TAG, "SVG Error loading resource " + mFlagId + e.getMessage());
             }
             return null;
         }

@@ -9,11 +9,10 @@ import android.test.AndroidTestCase;
 import android.test.RenamingDelegatingContext;
 import android.util.Log;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by brent on 26/02/15.
+ * @author BRM
  */
 public class DatabaseTestCase extends AndroidTestCase {
     private static final String TAG = "DatabaseTestCase";

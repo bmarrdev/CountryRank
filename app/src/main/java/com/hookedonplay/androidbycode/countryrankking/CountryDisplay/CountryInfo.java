@@ -22,6 +22,7 @@ public class CountryInfo {
         mLongitude = 0;
     }
 
+    @SuppressWarnings("SameParameterValue")
     public CountryInfo(String desc, String value, int imageId, double latitude, double longitude) {
         mDescription = desc;
         mValue = value;

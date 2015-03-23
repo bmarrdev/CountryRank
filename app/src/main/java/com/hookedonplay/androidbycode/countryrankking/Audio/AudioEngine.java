@@ -37,6 +37,7 @@ import java.util.HashMap;
  * Supported audio containers are WAV and MP3 at a minimum.
  * Please use WAV for very small files (< 1 sec)
  */
+@SuppressWarnings("WeakerAccess")
 public class AudioEngine {
     private static final String TAG = "AudioEngine";
 
@@ -158,10 +159,10 @@ public class AudioEngine {
      * Play a predefined small sound
      *
      * @param sound     Sound to play see SOUND_* values
-     * @param bPlaySoft Play the sound at half users set volume
+     * @param playSoft Play the sound at half users set volume
      * @throws IllegalArgumentException if sound is not an acceptable value
      */
-    public void playSound(final int sound, final boolean bPlaySoft) throws IllegalArgumentException {
+    public void playSound(final int sound, final boolean playSoft) throws IllegalArgumentException {
 
         if (!mSoundsLoaded) {
             Log.e(TAG, "Sounds are not loaded yet...unable to play");
@@ -181,7 +182,7 @@ public class AudioEngine {
             final float streamVolumeMax = mAudioMgr.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
             float volume = streamVolumeCurrent / streamVolumeMax;
 
-            if (bPlaySoft) {
+            if (playSoft) {
                 volume = volume * (float) 0.1;
             }
 

@@ -169,6 +169,7 @@ public class GamePreferences {
         return sp.getInt(key, defaultValue);
     }
 
+    @SuppressWarnings("SameParameterValue")
     private String getPrefString(String key, String defaultValue) {
         SharedPreferences sp = mContext.getSharedPreferences(mContext.getString(R.string.pref_game), Activity.MODE_PRIVATE);
         return sp.getString(key, defaultValue);

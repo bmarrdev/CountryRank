@@ -166,7 +166,7 @@ public class DbTableCountry {
      * @return List of dbQuake objects that meet filter
      */
     public List<DbCountry> getCountries(@Nullable String where, @Nullable String[] args,
-                                        @Nullable String groupBy, @Nullable String having, @Nullable String orderBy) {
+                                        @SuppressWarnings("SameParameterValue") @Nullable String groupBy, @SuppressWarnings("SameParameterValue") @Nullable String having, @Nullable String orderBy) {
         List<DbCountry> databaseSelectedCountries = new ArrayList<>();
         Cursor cursor = mDatabase.query(DbTableCountryHelper.TABLE_TARGET,
                 mAllColumns, where, args, groupBy, having, orderBy);
@@ -221,6 +221,7 @@ public class DbTableCountry {
         country.setDrivesOn(DriveRoad.values()[cursor.getInt(index++)]);
         country.setFlagID(cursor.getInt(index++));
         country.setMapID(cursor.getInt(index++));
+        //noinspection UnusedAssignment
         country.setDifficulty(CountryDifficulty.values()[cursor.getInt(index++)]);
         return country;
     }

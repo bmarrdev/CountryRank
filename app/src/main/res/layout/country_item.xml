@@ -7,6 +7,7 @@
     android:layout_weight="1" >
 
     <ImageView
+        tools:ignore="contentDescription"
         android:id="@+id/imageViewData"
         android:layout_height="fill_parent"
         android:layout_width="fill_parent"
