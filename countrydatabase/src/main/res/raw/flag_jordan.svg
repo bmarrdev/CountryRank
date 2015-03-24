@@ -11,7 +11,7 @@
    height="420"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.91 r13725"
    sodipodi:docname="flag_jordan.svg">
   <metadata
      id="metadata18">
@@ -35,31 +35,28 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="640"
-     inkscape:window-height="480"
+     inkscape:window-width="1248"
+     inkscape:window-height="813"
      id="namedview14"
      showgrid="false"
-     inkscape:zoom="0.1625"
-     inkscape:cx="211.86879"
-     inkscape:cy="165.45632"
+     inkscape:zoom="0.65"
+     inkscape:cx="278.55428"
+     inkscape:cy="288.61771"
      inkscape:window-x="62"
      inkscape:window-y="37"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg2" />
-  <rect
-     width="840"
-     height="420"
-     fill="#007a3d"
+  <path
+     style="fill:#007a3d"
+     d="m 0,0 840,0 0,420 -840,0 z"
      id="rect4" />
-  <rect
-     width="840"
-     height="280"
-     fill="#fff"
+  <path
+     style="fill:#ffffff"
+     d="m 0,0 840,0 0,280 -840,0 z"
      id="rect6" />
-  <rect
-     width="840"
-     height="140"
-     fill="000"
+  <path
+     style=""
+     d="m 0,0 840,0 0,140 -840,0 z"
      id="rect8" />
   <path
      d="M 0,0 V 420 L 420,210 z"
