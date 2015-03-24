@@ -78,7 +78,7 @@ public class DatabaseTestCase extends AndroidTestCase {
         List<DbCountry> countryList = mDatabaseCountry.getCountries(null, null, null, null, DbTableCountryHelper.COLUMN_AREA + " DESC");
         int areaRank = 0;
         for (DbCountry dbCountry : countryList) {
-            Log.v(TAG, dbCountry.getName() + " area: " + dbCountry.getAreaString() + " rank: " + dbCountry.getAreaRank());
+            Log.v(TAG, dbCountry.getName() + " area: " + dbCountry.getAreaString(mContext) + " rank: " + dbCountry.getAreaRank());
             assertTrue(dbCountry.getAreaRank() > areaRank);
             areaRank = dbCountry.getAreaRank();
         }
