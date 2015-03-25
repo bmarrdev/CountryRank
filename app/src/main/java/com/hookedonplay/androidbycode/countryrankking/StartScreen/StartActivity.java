@@ -209,8 +209,7 @@ public class StartActivity extends FragmentActivity {
                 QuestionType.QUESTION_COASTLINE_LENGTH,
                 QuestionType.QUESTION_GDP,
                 QuestionType.QUESTION_POPULATION_DENSITY,
-                QuestionType.QUESTION_GDP_PER_CAPITA,
-                QuestionType.QUESTION_LIFE_EXPECTANCY
+                QuestionType.QUESTION_GDP_PER_CAPITA
         };
 
         public MenuPagerAdapter(FragmentManager fragmentManager) {

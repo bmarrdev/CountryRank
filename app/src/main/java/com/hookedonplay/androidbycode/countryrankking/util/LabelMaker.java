@@ -105,6 +105,8 @@ public class LabelMaker {
                 return top ? R.drawable.icon_coast_highest : R.drawable.icon_coast_lowest;
             case QUESTION_LAND_BORDERS:
                 return top ? R.drawable.icon_borders_highest : R.drawable.icon_borders_lowest;
+            case QUESTION_LIFE_EXPECTANCY:
+                return top ? R.drawable.icon_life_expectancy_highest : R.drawable.icon_life_expectancy_lowest;
             default:
                 throw new IllegalStateException("Unknown question type");
         }
