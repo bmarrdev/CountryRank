@@ -302,6 +302,20 @@ public class DbCountry {
         mMilitaryCount = militaryCount;
     }
 
+    public String getMilitaryCountString(@NonNull Context context) {
+        DecimalFormat df = new DecimalFormat("#.##");
+
+        if (mMilitaryCount >= 1000000000) {
+            double pop = mMilitaryCount / 1000000000f;
+            return df.format(pop) + " " + context.getString(R.string.data_billion);
+        }
+        if (mMilitaryCount >= 1000000) {
+            double pop = mMilitaryCount / 1000000f;
+            return df.format(pop) + " " + context.getString(R.string.data_million);
+        }
+        return NumberFormat.getNumberInstance(Locale.US).format(mMilitaryCount);
+    }
+
     public Hemisphere getHemisphere() {
         return mHemisphere;
     }
