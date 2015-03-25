@@ -613,7 +613,7 @@ public class SwapFragment extends WorkPadFragment implements DragLinearLayout.On
                 }
             });
 
-            animation.setStartTime(AnimationUtils.currentAnimationTimeMillis() + (500 * i));
+            animation.setStartTime(AnimationUtils.currentAnimationTimeMillis() + (300 * i));
 
             countryView.setAnimation(animation);
 
