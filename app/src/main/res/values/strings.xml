@@ -33,8 +33,8 @@
     <string name="country_dialog_gdp_per_capita">GDP per capita</string>
     <string name="country_dialog_coast_length">Length of coastline</string>
     <string name="country_dialog_life_expectancy">Life Expectancy</string>
-    <string name="country_dialog_olympics_summer">Summer Olympic Medals</string>
-    <string name="country_dialog_olympics_winter">Winter Olympic Medals</string>
+    <string name="country_dialog_olympics_summer">Summer Olympics</string>
+    <string name="country_dialog_olympics_winter">Winter Olympics</string>
     <string name="country_dialog_obesity">Obesity</string>
     <string name="country_dialog_military">Military</string>
     <string name="country_dialog_internet_access">Internet Access</string>
