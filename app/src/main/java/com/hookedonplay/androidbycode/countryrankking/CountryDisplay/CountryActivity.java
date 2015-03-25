@@ -29,6 +29,7 @@ import android.widget.ImageView;
 
 import com.caverock.androidsvg.SVG;
 import com.caverock.androidsvg.SVGParseException;
+import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.hookedonplay.androidbycode.countrydatabase.DbCountry;
 import com.hookedonplay.androidbycode.countrydatabase.DbTableCountry;
 import com.hookedonplay.androidbycode.countryrankking.R;
@@ -43,7 +44,9 @@ import java.util.Locale;
 /**
  * @author BRM20150315
  *         <p/>
- *         Activity to display details about the country
+ *         Activity to display details about the country. Flag, map and the a list of cards
+ *         showing each metric for the country. A floating button allows opening the location
+ *         of the capital in whichever app can handle geographics locations on the device
  */
 public class CountryActivity extends ActionBarActivity {
     private static final String TAG = "CountryActivity";
@@ -115,6 +118,11 @@ public class CountryActivity extends ActionBarActivity {
         super.onPause();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
     private void fillData() {
 
         // Add the country name to the title of the toolbar
@@ -141,7 +149,7 @@ public class CountryActivity extends ActionBarActivity {
         }
 
         if (mCountry.getPopulation() > 0) {
-            countryDataSet.add(new CountryInfo(getString(R.string.country_dialog_population), mCountry.getPopulationString(this) + " " + getString(R.string.country_dialog_people), R.drawable.icon_population_highest));
+            countryDataSet.add(new CountryInfo(getString(R.string.country_dialog_population), mCountry.getPopulationString(this), R.drawable.icon_population_highest));
         }
 
         if (mCountry.getArea() > 0) {
@@ -177,7 +185,7 @@ public class CountryActivity extends ActionBarActivity {
         }
 
         if (mCountry.getMilitaryCount() > 0) {
-            countryDataSet.add(new CountryInfo(getString(R.string.country_dialog_military), "" + mCountry.getMilitaryCount() + " " + getString(R.string.country_dialog_people), R.drawable.icon_military));
+            countryDataSet.add(new CountryInfo(getString(R.string.country_dialog_military), "" + mCountry.getMilitaryCountString(this) + " " + getString(R.string.country_dialog_people), R.drawable.icon_military));
         }
 
         if (mCountry.getInternetAccess() > 0) {
@@ -189,33 +197,33 @@ public class CountryActivity extends ActionBarActivity {
     }
 
     private void setupFapIconMenu() {
-        final ImageView icon = new ImageView(this);
-        icon.setImageResource(R.drawable.ic_action_new_light);
-
-        FloatingActionButton actionButton = new FloatingActionButton.Builder(this)
-                .setContentView(icon)
-                .build();
-
-        final FloatingActionMenu rightLowerMenu = new FloatingActionMenu.Builder(this)
-                .attachTo(actionButton)
-                .build();
-
-        rightLowerMenu.setStateChangeListener(new FloatingActionMenu.MenuStateChangeListener() {
+        final View actionWiki = findViewById(R.id.action_open_wikipedia);
+        actionWiki.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onMenuOpened(FloatingActionMenu menu) {
+            public void onClick(View v) {
                 if (mCountry == null) {
                     return;
                 }
+
+                String countryName = mCountry.getName().replaceAll(" ", "_");
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.country_wikipedia_url) + countryName));
+                startActivity(browserIntent);
+            }
+        });
+
+        final View actionLocation = findViewById(R.id.action_open_location);
+        actionLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mCountry == null) {
+                    return;
+                }
+                // Load the location in app that accepts geographic latitude and longitude, ie. maps, earth
                 String uri = String.format(Locale.ENGLISH, "geo:%f,%f?z=9", mCountry.getCapitalLat(), mCountry.getCapitalLon());
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
                 startActivity(intent);
             }
-
-            @Override
-            public void onMenuClosed(FloatingActionMenu menu) {
-            }
         });
-
     }
 
     /**
