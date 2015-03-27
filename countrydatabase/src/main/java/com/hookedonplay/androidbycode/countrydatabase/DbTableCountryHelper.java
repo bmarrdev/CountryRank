@@ -5,21 +5,17 @@
 package com.hookedonplay.androidbycode.countrydatabase;
 
 import android.content.Context;
-
-import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 /**
  * @author BRM20150310
- * Helper subclass for country database table
- *
+ *         Helper subclass for country database table
  * @see android.database.sqlite.SQLiteOpenHelper
  */
-public class DbTableCountryHelper extends SQLiteAssetHelper {
-    @SuppressWarnings("unused")
-    private static final String TAG = "DbTableCountryHelper";
-
+public class DbTableCountryHelper extends SQLiteOpenHelper {
     public static final String TABLE_TARGET = "table_country_list";
-
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_NAME = "col_country_name";
     public static final String COLUMN_CAPITAL = "col_country_capital";
@@ -46,14 +42,10 @@ public class DbTableCountryHelper extends SQLiteAssetHelper {
     public static final String COLUMN_LENGTH_COASTLINE = "col_country_coastline_length";
     public static final String COLUMN_LAND_BORDERS = "col_country_borders";
     public static final String COLUMN_CURRENCY = "col_country_currency";
-
     public static final String COLUMN_DRIVE_ROAD = "col_country_road_side";
-
     public static final String COLUMN_FLAG_ID = "col_country_flag_id";
     public static final String COLUMN_MAP_ID = "col_country_map_id";
     public static final String COLUMN_DIFFICULTY = "col_country_difficulty";
-
-
     // Database creation sql statement
     @SuppressWarnings("unused")
     private static final String DATABASE_CREATE = "create table "
@@ -88,7 +80,7 @@ public class DbTableCountryHelper extends SQLiteAssetHelper {
             + COLUMN_FLAG_ID + " integer, "
             + COLUMN_MAP_ID + " integer, "
             + COLUMN_DIFFICULTY + " integer);";
-
+    private static final String TAG = "DbTableCountryHelper";
     private static final String DATABASE_NAME = "countries.db";
 
     private static final int DATABASE_VERSION = 1;
@@ -97,17 +89,17 @@ public class DbTableCountryHelper extends SQLiteAssetHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-//    @Override
-//    public void onCreate(SQLiteDatabase database) {
-//        database.execSQL(DATABASE_CREATE);
-//    }
+    @Override
+    public void onCreate(SQLiteDatabase database) {
+        database.execSQL(DATABASE_CREATE);
+    }
 
-//    @Override
-//    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-//        Log.v(TAG,
-//                "Upgrading database from version " + oldVersion + " to "
-//                        + newVersion + ", which will destroy all old data");
-//        db.execSQL("DROP TABLE IF EXISTS " + TABLE_TARGET);
-//        onCreate(db);
-//    }
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        Log.v(TAG,
+                "Upgrading database from version " + oldVersion + " to "
+                        + newVersion + ", which will destroy all old data");
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_TARGET);
+        onCreate(db);
+    }
 } 
