@@ -29,13 +29,10 @@ import android.widget.ImageView;
 
 import com.caverock.androidsvg.SVG;
 import com.caverock.androidsvg.SVGParseException;
-import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.hookedonplay.androidbycode.countrydatabase.DbCountry;
 import com.hookedonplay.androidbycode.countrydatabase.DbTableCountry;
 import com.hookedonplay.androidbycode.countryrankking.R;
 import com.hookedonplay.androidbycode.countryrankking.EffectBlur.BlurBehind;
-import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
-import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,6 +47,7 @@ import java.util.Locale;
  */
 public class CountryActivity extends ActionBarActivity {
     private static final String TAG = "CountryActivity";
+
     private Animator mCurrentAnimator;
     private int mShortAnimationDuration;
 
@@ -229,10 +227,10 @@ public class CountryActivity extends ActionBarActivity {
     /**
      * Zoom image from thumbnail to full screen with animation.
      *
-     * @param thumbView View to zoom
+     * @param thumbView  View to zoom
      * @param imageResId full sized image resource id
-     *
-     * Taken from android developer site: developer.android.com/training/animation/zoom.html
+     *                   <p/>
+     *                   Taken from android developer site: developer.android.com/training/animation/zoom.html
      */
     private void zoomImageFromThumb(final View thumbView, int imageResId) {
         // If there's an animation in progress, cancel it

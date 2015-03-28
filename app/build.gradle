@@ -8,8 +8,8 @@ android {
         applicationId "com.hookedonplay.androidbycode.countryrankking"
         minSdkVersion 15
         targetSdkVersion 22
-        versionCode 1
-        versionName "0.9"
+        versionCode 2
+        versionName "0.9.1"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
