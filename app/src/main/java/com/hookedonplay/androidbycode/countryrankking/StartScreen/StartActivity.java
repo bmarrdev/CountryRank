@@ -45,6 +45,10 @@ public class StartActivity extends FragmentActivity {
         setupGameTypePager();
 
         RankActivity.loadAudioEngine(getApplicationContext());
+
+        Intent intent = new Intent(StartActivity.this, SplashActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(intent);
     }
 
     /**
@@ -204,6 +208,7 @@ public class StartActivity extends FragmentActivity {
     public static class MenuPagerAdapter extends FragmentPagerAdapter {
         private static QuestionType[] mMenuItems = {
                 QuestionType.QUESTION_POPULATION,
+                QuestionType.QUESTION_LATITUDE,
                 QuestionType.QUESTION_AREA,
                 QuestionType.QUESTION_LAND_BORDERS,
                 QuestionType.QUESTION_COASTLINE_LENGTH,
