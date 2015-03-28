@@ -26,11 +26,11 @@ import com.caverock.androidsvg.SVGParseException;
 import com.hookedonplay.androidbycode.countrydatabase.CountryDifficulty;
 import com.hookedonplay.androidbycode.countrydatabase.DbCountry;
 import com.hookedonplay.androidbycode.countryrankking.Audio.AudioEngine;
+import com.hookedonplay.androidbycode.countryrankking.R;
+import com.hookedonplay.androidbycode.countryrankking.app.RankActivity;
 import com.hookedonplay.androidbycode.countryrankking.util.LabelMaker;
 import com.hookedonplay.androidbycode.countryrankking.util.QuestionType;
-import com.hookedonplay.androidbycode.countryrankking.R;
 import com.hookedonplay.androidbycode.countryrankking.util.RandomCountryGenerator;
-import com.hookedonplay.androidbycode.countryrankking.app.RankActivity;
 import com.jmedeisis.draglinearlayout.DragLinearLayout;
 
 import java.util.ArrayList;
@@ -85,16 +85,11 @@ public class SwapFragment extends WorkPadFragment implements DragLinearLayout.On
     private CountryDifficulty mDifficulty;
     private QuestionType mQuestionType;
 
-    private boolean mFirstRun;
-    //private Context mContext;
-
     /**
      * Palette of colors used for the background of the {@link #mLayout} items. If there are more
      * items than this palette holds the layout will simply loop through to the start
      */
     private int[] mPalette;
-    @SuppressWarnings("FieldCanBeLocal")
-    private View mHelpView;
 
     @Override
     public void onPause() {
@@ -134,10 +129,7 @@ public class SwapFragment extends WorkPadFragment implements DragLinearLayout.On
 
         setResourcesForQuestionType(rootView, mQuestionType);
 
-        //mContext = getActivity();
-        mFirstRun = true;
         mPalette = getResources().getIntArray(R.array.material_palette_blue);
-        mHelpView = null;
 
         // We want to listen for the swap messages to play a sound
         mLayout.setOnViewSwapListener(this);
@@ -147,14 +139,6 @@ public class SwapFragment extends WorkPadFragment implements DragLinearLayout.On
         insertCountries(null);
 
         return rootView;
-    }
-
-    public void load() {
-        mCallback.onLoadFinished();
-    }
-
-    public void next() {
-
     }
 
     @SuppressWarnings("unused")
@@ -237,9 +221,6 @@ public class SwapFragment extends WorkPadFragment implements DragLinearLayout.On
         imageViewData.setImageResource(R.drawable.flag_generic);
         inflatedView.setVisibility(View.INVISIBLE);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
-        //if (layout.getChildCount() > 0) {
-        //    layoutParams.setMargins(0, 8, 0, 8);
-        //}
         layout.addView(inflatedView, -1, layoutParams);
 
         /**
@@ -365,38 +346,6 @@ public class SwapFragment extends WorkPadFragment implements DragLinearLayout.On
     }
 
     /**
-     * Create a simulation of dragging and dropping the items in the country layout to arrange
-     * in order
-     */
-    private void simulateDragAndDrop() {
-//
-//        final int startY = mLayout.getChildAt(0).getBottom() - 10;
-//        final int endY = mLayout.getChildAt(mLayout.getChildCount() - 1).getBottom() - 10;
-//
-//        CountryItem countryItem = null;
-//        DbCountry country = (DbCountry) mLayout.getChildAt(0).getTag();
-//        for (CountryItem countryView : mCountryViews) {
-//            if (countryView.mCountry.getDbId() == country.getDbId()) {
-//                countryItem = countryView;
-//                break;
-//            }
-//        }
-//        try {
-//            SimulateDragDrop simulateDragDrop = new SimulateDragDrop();
-//            simulateDragDrop.setCustomEventListener(new SimulateDragDrop.OnFinishEventListener() {
-//                public void onEndDragDropSimulation() {
-//                    Log.e(TAG, "Finished drag drop");
-//                    mHelpView.setVisibility(View.GONE);
-//                }
-//            });
-//            simulateDragDrop.executeVerticalDrag(countryItem, mLayout, startY, endY, 2000, 100);
-//        } catch (IllegalArgumentException iae) {
-//            Log.e(TAG, "Unable to initiate drag and drop demonstration");
-//            iae.printStackTrace();
-//        }
-    }
-
-    /**
      * Get the number of answers the user has correct in the current layout
      *
      * @return number correct
@@ -411,6 +360,13 @@ public class SwapFragment extends WorkPadFragment implements DragLinearLayout.On
         return correct;
     }
 
+    /**
+     * Check if given position is in correct order. In the case of equal values one item may be correct
+     * in more than one position
+     *
+     * @param pos index position in the layout of countries to order
+     * @return true for item in correct position
+     */
     private boolean isItemCorrect(final int pos) {
         Comparator<CountryItem> cic = CountryItem.getComparator(mQuestionType, CountryItem.SortOrder.SORT_DESCENDING);
         final View child = mLayout.getChildAt(pos);
@@ -433,6 +389,12 @@ public class SwapFragment extends WorkPadFragment implements DragLinearLayout.On
         return false;
     }
 
+    /**
+     * Retrieve the list of country database ids to save for restoring later
+     *
+     * @return array of country database ids
+     * @throws IllegalStateException when unable to generate database id list
+     */
     public long[] getDatabaseIdList()
             throws IllegalStateException {
         try {
@@ -448,6 +410,11 @@ public class SwapFragment extends WorkPadFragment implements DragLinearLayout.On
         }
     }
 
+    /**
+     * Check answers for correctness
+     *
+     * @param restoringLayout layout is being restored after the activity has been resumed
+     */
     public void checkAnswers(final boolean restoringLayout) {
         final int numCorrect = getNumberCorrect();
 
@@ -456,7 +423,6 @@ public class SwapFragment extends WorkPadFragment implements DragLinearLayout.On
             final View child = mLayout.getChildAt(i);
             View clickHandlerView = child.findViewById(R.id.frameClickInfo);
             clickHandlerView.setVisibility(View.VISIBLE);
-            showStatus(clickHandlerView);
 
             if (!restoringLayout) {
                 Animation animation = AnimationUtils.loadAnimation(mLayout.getContext(), R.anim.anim_reveal_answer);
@@ -485,12 +451,18 @@ public class SwapFragment extends WorkPadFragment implements DragLinearLayout.On
         }
     }
 
+    /**
+     * Show country and metric answer for given view
+     *
+     * @param child        View to check
+     * @param countryIndex index of the child view
+     * @param numCorrect   number of correct items
+     * @param restoring    layout is being restored from onresume
+     */
     private void showAnswer(@NonNull View child,
                             final int countryIndex, final int numCorrect, boolean restoring) {
         final boolean lastItem = (countryIndex == mLayout.getChildCount() - 1);
-        //DbCountry country = (DbCountry) child.getTag();
         ImageView viewResult = (ImageView) child.findViewById(R.id.imageViewResult);
-        //if (country.getDbId() == mCountryViews.get(countryIndex).mCountry.getDbId()) {
         if (isItemCorrect(countryIndex)) {
             viewResult.setImageResource(R.drawable.result_correct);
             viewResult.setVisibility(View.VISIBLE);
@@ -507,27 +479,19 @@ public class SwapFragment extends WorkPadFragment implements DragLinearLayout.On
 
         // We don't want to tell the user the score until the animation is finished
         if (lastItem && !restoring) {
-            //scorecard.incrementScore(numCorrect, mLayout.getChildCount());
             mCallback.onQuestionFinished(numCorrect, mLayout.getChildCount());
         }
 
     }
 
-    private void showStatus(View view) {
-        Log.e(TAG, "Visibility: " + view.getVisibility() + " Visible: " + (view.getVisibility() == View.VISIBLE));
-        Log.e(TAG, "Clickable: " + view.isClickable());
-        DbCountry country = (DbCountry) view.getTag();
-        if (country != null) {
-            Log.e(TAG, "Tag: " + country.getName());
-        }
-    }
-
+    /**
+     * Start a new question by displaying a new country for each layout child
+     */
     public void nextQuestion() {
         for (int i = 0; i < mLayout.getChildCount(); i++) {
             View child = mLayout.getChildAt(i);
             View clickHandlerView = child.findViewById(R.id.frameClickInfo);
             clickHandlerView.setVisibility(View.GONE);
-            showStatus(clickHandlerView);
 
             if (mLayout.getVisibility() == View.VISIBLE) {
                 Animation animation = AnimationUtils.loadAnimation(mLayout.getContext(), R.anim.anim_country_hide);
@@ -558,6 +522,10 @@ public class SwapFragment extends WorkPadFragment implements DragLinearLayout.On
         }
     }
 
+    /**
+     * Plays an audible note based on the child item being displayed. This is used when
+     * @param position index of country item
+     */
     private void playSoundForPosition(int position) {
         int audio;
         switch (position) {
@@ -581,6 +549,11 @@ public class SwapFragment extends WorkPadFragment implements DragLinearLayout.On
         RankActivity.mAudioEngine.playSound(audio);
     }
 
+    /**
+     * Show the reveal animation to display each country
+     *
+     * @param showAnimationEffect display with animation
+     */
     private void animateLayout(boolean showAnimationEffect) {
         for (int i = 0; i < mLayout.getChildCount(); i++) {
             Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.anim_reveal_country);
@@ -590,7 +563,7 @@ public class SwapFragment extends WorkPadFragment implements DragLinearLayout.On
                 countryView.setVisibility(View.VISIBLE);
                 continue;
             }
-            final boolean isLastItem = (i == mLayout.getChildCount() - 1);
+
             final int position = i;
             animation.setAnimationListener(new Animation.AnimationListener() {
                 @Override
@@ -602,10 +575,6 @@ public class SwapFragment extends WorkPadFragment implements DragLinearLayout.On
                 public void onAnimationEnd(Animation animation) {
                     playSoundForPosition(position);
                     Log.v(TAG, "Finished display of countries");
-                    if (isLastItem && mFirstRun) {
-                        mFirstRun = false;
-                        simulateDragAndDrop();
-                    }
                 }
 
                 @Override
@@ -620,7 +589,14 @@ public class SwapFragment extends WorkPadFragment implements DragLinearLayout.On
         }
     }
 
-    public void setResourcesForQuestionType(@NonNull View rootView, @NonNull QuestionType questionType) {
+    /**
+     * Set the images based on given questionType.  For example if the question is on population
+     * then the population icons will be displayed.
+     *
+     * @param rootView     Root game view to find imageViews on game
+     * @param questionType Type of questions
+     */
+    private void setResourcesForQuestionType(@NonNull View rootView, @NonNull QuestionType questionType) {
         TextView topDesc = (TextView) rootView.findViewById(R.id.textDescTop);
         topDesc.setText(LabelMaker.getLabel(questionType, true));
 
@@ -634,12 +610,26 @@ public class SwapFragment extends WorkPadFragment implements DragLinearLayout.On
         bottomIcon.setImageResource(LabelMaker.getIconResourceId(questionType, false));
     }
 
+    /**
+     * Trigger the async loading of SVG image
+     *
+     * @param imageId image resource id to load
+     */
     private void setImage(final int imageId) {
         LoadResourceTask loadResource = new LoadResourceTask();
         loadResource.execute(imageId);
         mImageLoadList.add(loadResource);
     }
 
+    /**
+     * Triggered when a view is dragged to the extent that it swaps positions with another view. This
+     * callback is triggered on each change of view order
+     *
+     * @param firstView View that has been swapped
+     * @param firstPosition new position of view
+     * @param secondView Second view that has been swapped
+     * @param secondPosition new position of second view
+     */
     @Override
     public void onSwap(View firstView, int firstPosition, View secondView, int secondPosition) {
         RankActivity.mAudioEngine.playSound(AudioEngine.SOUND_SWAP);
@@ -661,6 +651,10 @@ public class SwapFragment extends WorkPadFragment implements DragLinearLayout.On
 
     }
 
+    /**
+     * Asynchronous loading of SVG images is required as load times will vary greatly based on
+     * complexity of SVG image.
+     */
     private class LoadResourceTask extends AsyncTask<Integer, Integer, Picture> {
         private int mFlagId;
 
@@ -670,6 +664,8 @@ public class SwapFragment extends WorkPadFragment implements DragLinearLayout.On
                 SVG svg = SVG.getFromResource(getActivity(), mFlagId);
                 return svg.renderToPicture();
             } catch (SVGParseException e) {
+                // Generation of image from SVG has failed. Not much we can do here except to
+                // continue to show the placeholder image and continue the game
                 Log.e(TAG, "Error loading resource " + String.valueOf(mFlagId) + e.getMessage());
             }
             return null;
