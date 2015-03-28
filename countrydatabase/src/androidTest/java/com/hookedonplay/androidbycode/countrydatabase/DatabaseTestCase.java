@@ -29,17 +29,17 @@ public class DatabaseTestCase extends AndroidTestCase {
      * Test populating database
      */
     public void testFillDatabase(){
-        //PopulateDatabase.execute(mContext, PopulateDatabase.PopulateCommand.POPULATE_CLEAN_BUILD);
+        PopulateDatabase.execute(mContext, PopulateDatabase.PopulateCommand.POPULATE_CLEAN_BUILD);
         mDatabaseCountry = new DbTableCountry(mContext);
         mDatabaseCountry.open();
         long count = mDatabaseCountry.getEntryCount(null, null);
-        //mDatabaseCountry.outputDatabaseStats();
+        mDatabaseCountry.outputDatabaseStats();
         mDatabaseCountry.close();
-        //PopulateDatabase.execute(mContext, PopulateDatabase.PopulateCommand.POPULATE_CLEAN_BUILD);
+        PopulateDatabase.execute(mContext, PopulateDatabase.PopulateCommand.POPULATE_CLEAN_BUILD);
         mDatabaseCountry = new DbTableCountry(mContext);
         mDatabaseCountry.open();
         long count2 = mDatabaseCountry.getEntryCount(null, null);
-        //mDatabaseCountry.outputDatabaseStats();
+        mDatabaseCountry.outputDatabaseStats();
         mDatabaseCountry.close();
         assertTrue(count == count2);
     }
@@ -49,13 +49,13 @@ public class DatabaseTestCase extends AndroidTestCase {
      * to all other records
      */
     public void testPopulationRank() {
-        //PopulateDatabase.execute(mContext, PopulateDatabase.PopulateCommand.POPULATE_CLEAN_BUILD);
+        PopulateDatabase.execute(mContext, PopulateDatabase.PopulateCommand.POPULATE_CLEAN_BUILD);
         mDatabaseCountry = new DbTableCountry(mContext);
         mDatabaseCountry.open();
         List<DbCountry> countryList = mDatabaseCountry.getCountries(null, null, null, null, DbTableCountryHelper.COLUMN_POPULATION + " DESC");
         int populationRank = 0;
         for (DbCountry dbCountry : countryList) {
-            //Log.v(TAG, dbCountry.getName() + " population: " + dbCountry.getPopulationString() + " rank: " + dbCountry.getPopulationRank());
+            Log.v(TAG, dbCountry.getName() + " population: " + dbCountry.getPopulationString(mContext) + " rank: " + dbCountry.getPopulationRank());
             assertTrue(dbCountry.getPopulationRank() > populationRank);
             populationRank = dbCountry.getPopulationRank();
         }
@@ -72,7 +72,7 @@ public class DatabaseTestCase extends AndroidTestCase {
      * [Nepal,1727km2,14th]
      */
     public void testAreaRank() {
-        //PopulateDatabase.execute(mContext, PopulateDatabase.PopulateCommand.POPULATE_CLEAN_BUILD);
+        PopulateDatabase.execute(mContext, PopulateDatabase.PopulateCommand.POPULATE_CLEAN_BUILD);
         mDatabaseCountry = new DbTableCountry(mContext);
         mDatabaseCountry.open();
         List<DbCountry> countryList = mDatabaseCountry.getCountries(null, null, null, null, DbTableCountryHelper.COLUMN_AREA + " DESC");
@@ -89,7 +89,7 @@ public class DatabaseTestCase extends AndroidTestCase {
      * Sanity check for values in each database entry
      */
     public void testDatabaseValues() {
-        //PopulateDatabase.execute(mContext, PopulateDatabase.PopulateCommand.POPULATE_CLEAN_BUILD);
+        PopulateDatabase.execute(mContext, PopulateDatabase.PopulateCommand.POPULATE_CLEAN_BUILD);
         mDatabaseCountry = new DbTableCountry(mContext);
         mDatabaseCountry.open();
         List<DbCountry> countryList = mDatabaseCountry.getCountries(null, null);
@@ -122,17 +122,17 @@ public class DatabaseTestCase extends AndroidTestCase {
      * @param dbCountry
      */
     private void verifyGdp(@NonNull DbCountry dbCountry) {
-        assertTrue(dbCountry.getGdp() < 10000);
+        assertTrue(dbCountry.getGdp() < 100000);
         assertTrue(dbCountry.getGdp() >= 0);
-        // The GDP is in billions, so we need to mulitply the result by one billion dollars to get
+        // The GDP is in billions, so we need to multiply the result by one billion dollars to get
         // the gdp per person
         final double gdpCapita = 1000000000 * (dbCountry.getGdp() / dbCountry.getPopulation());
 
         Log.v(TAG, dbCountry.getName() + " Gdp " + dbCountry.getGdp() + " pop " + dbCountry.getPopulation() + " Gdp p cap : " + dbCountry.getGdpPerCapita() + " est " + gdpCapita);
 
         // We ensure that the gdp per capita figure is reasonable
-        assertTrue(dbCountry.getGdpPerCapita() > (gdpCapita - (gdpCapita/10)));
-        assertTrue(dbCountry.getGdpPerCapita() < (gdpCapita + (gdpCapita/10)));
+        assertTrue(dbCountry.getGdpPerCapita() > (gdpCapita - (gdpCapita/5)));
+        assertTrue(dbCountry.getGdpPerCapita() < (gdpCapita + (gdpCapita/5)));
     }
 
 
